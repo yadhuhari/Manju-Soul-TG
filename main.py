@@ -60,3 +60,7 @@ ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
             ]]
             )
         )
+
+print("I AM OK DEAR 😘")
+
+SOULTG.run()
