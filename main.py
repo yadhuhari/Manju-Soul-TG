@@ -52,15 +52,15 @@ I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
 JUST SEARCH THE MOVIE BY ITS NAME HERE AND ENJOY 😍
 ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
 
-@SoulBotzz"""
+@SoulBotzz""",
        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("UPDATE CHANNEL 📢", url="t.me/ManjuUpdates"),
-            ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ]]
-            )
-        )
+           InlineKeyboardButton("UPDATE CHANNEL 📢", url="t.me/ManjuUpdates"),
+           ],[
+           InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+           InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+           ]]
+           )
+       )
 
 print("I AM OK DEAR 😘")
 
