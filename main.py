@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import random
 from pyrogram.errors import UserNotParticipant
-
+import os
 
 force_channel = "SoulBozz"
 
