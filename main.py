@@ -47,16 +47,17 @@ async def start_cmd(client, message):
         photo=random.choice(PICS),
         caption="""
 HELLO !
-MY NAME IS മഞ്ജു 💖 ,
+MY NAME IS MANJU 💖 ,
 I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
 JUST SEARCH THE MOVIE BY ITS NAME HERE AND ENJOY 😍
 ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
 
 @SoulBotzz"""
       reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("⚡UPDATES⚡", url="t.me/SoulBotzz"),
+            InlineKeyboardButton("UPDATE CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
-            InlineKeyboardButton("⚡CREATOR⚡", url="www.github.com/SOULTG/")
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
             ]]
             )
         )
