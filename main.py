@@ -130,8 +130,7 @@ async def search_cmd(client, message):
         )
         
 
-SEARCH_MESSAGE =        
-"""
+SEARCH_MESSAGE = """
 𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗔 𝗠𝗢𝗩𝗜𝗘 𝗜𝗦 𝗔 𝗦𝗜𝗠𝗣𝗟𝗘 𝗧𝗛𝗜𝗡𝗚.
 𝗝𝗨𝗦𝗧 𝗧𝗔𝗣 𝗢𝗡 𝗧𝗛𝗘 𝗕𝗘𝗟𝗢𝗪 𝗕𝗨𝗧𝗧𝗢𝗡 𝗔𝗡𝗗 𝗘𝗡𝗝𝗢𝗬 😍
 
@@ -153,7 +152,7 @@ async def info_cmd(client, message):
             )
         )
         
-INFO_MESSAGE =       f"""
+INFO_MESSAGE = f"""
 ⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
 
 ⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
