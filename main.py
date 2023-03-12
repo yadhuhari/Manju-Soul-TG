@@ -140,8 +140,13 @@ SEARCH_MESSAGE = """
 async def callback(bot, msg: CallbackQuery):
     if msg.data=="start":
         await msg.message.edit(
-            text=START_MESSAGE
+            photo=random.choice(PICS),
+            caption=START_MESSAGE
         )
+    elif msg.data=="help":
+        await msg.message.edit(
+            photo=random.choice(PICS),
+            caption=HELP_MESSAGE,
 
 print("I AM OK DEAR")
 
