@@ -39,7 +39,7 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=START_MESSAGE,
+        caption=START_MESSAGE.format{message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -50,7 +50,7 @@ async def start_cmd(client, message):
         )
         
 START_MESSAGE = f"""
-𝗛𝗘𝗟𝗟𝗢 {message.from_user.mention}
+𝗛𝗘𝗟𝗟𝗢 
 𝗠𝗬 𝗡𝗔𝗠𝗘 𝗜𝗦 𝗠𝗔𝗡𝗝𝗨 💖
 𝗜 𝗖𝗔𝗡 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗠𝗔𝗟𝗔𝗬𝗔𝗟𝗔𝗠 𝗠𝗢𝗩𝗜𝗘𝗦 𝗙𝗢𝗥 𝗬𝗢𝗨 😎
 𝗝𝗨𝗦𝗧 𝗚𝗢 𝗧𝗢 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡 𝗔𝗡𝗗 𝗙𝗢𝗟𝗟𝗢𝗪 𝗜𝗡𝗦𝗧𝗥𝗨𝗖𝗧𝗜𝗢𝗡𝗦.
@@ -63,7 +63,7 @@ START_MESSAGE = f"""
 async def help_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=HELP_MESSAGE,
+        caption=HELP_MESSAGE.format.(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -74,7 +74,7 @@ async def help_cmd(client, message):
         )
         
 HELP_MESSAGE = """ 
-𝗛𝗘𝗬 {message.from_user.mention}
+𝗛𝗘𝗬 
 𝗧𝗛𝗜𝗦 𝗜𝗦 𝗠𝗬 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡!
 𝗛𝗘𝗥𝗘 𝗜𝗦 𝗠𝗬 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦...
 
@@ -82,7 +82,6 @@ HELP_MESSAGE = """
 /help   : 𝗛𝗢𝗪 𝗧𝗢 𝗨𝗦𝗘 𝗠𝗘
 /about  : 𝗔𝗕𝗢𝗨𝗧 𝗠𝗘
 /search : 𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗢𝗩𝗜𝗘𝗦
-/info   : 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 𝗔𝗕𝗢𝗨𝗧 𝗬𝗢𝗨
 
 @SoulBotzz"""
         
@@ -136,32 +135,6 @@ SEARCH_MESSAGE = """
 
 @SoulBotzz
 """
-        
-    
-@SOULTG.on_message(filters.command("info"))
-async def info_cmd(client, message):
-    await message.reply_photo(
-        photo=random.choice(PICS),
-        caption=INFO_MESSAGE,
-        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
-            ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ]]
-            )
-        )
-        
-INFO_MESSAGE = f"""
-⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
-
-⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
-
-⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘    : @{message.from_user.username}
-
-⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
-
-@SoulBotzz"""
     
 @SOULTG.on_callback_query()
 async def callback(bot, msg: CallbackQuery):
