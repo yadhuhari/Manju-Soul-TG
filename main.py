@@ -63,7 +63,7 @@ START_MESSAGE = f"""
 async def help_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=HELP_MESSAGE.format.(message.from_user.mention),
+        caption= HELP_MESSAGE.format.(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
