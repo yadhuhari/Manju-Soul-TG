@@ -19,6 +19,43 @@ PICS = [
  "https://telegra.ph/file/1a3f98bd9e7eb4ea8d4ba.jpg"
 ]
 
+START_MSG = 
+"""HELLO 
+MY NAME IS MANJU 💖
+I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
+JUST GO TO HELP SECTION AND FOLLOW INSTRUCTIONS.
+ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
+
+@SoulBotzz"""
+
+HELP_MSG =
+"""HEY
+THIS IS MY HELP SECTION!
+HERE IS MY COMMAND...
+
+/start  : CHECK I AM ALIVE
+/help   : HOW TO USE ME
+/about  : ABOUT ME
+/search : TO SEARCH MOVIES
+
+@SoulBotzz"""
+
+ABOUT_MSG =
+"""⭕NAME     : MANJU 💖
+⭕CREATOR     : [SOUL BOTZZ](t.me/SoulBotzz)
+⭕LIBRARY     : [PYROGRAM](https://docs.pyrogram.org/)
+⭕LANGUAGE    : [PYTHON3](www.python.org/)
+⭕SERVER      : [RAILWAY](https://railway.app/)
+⭕SOURCE CODE : [CLICK HERE](t.me/ManjuUpdates)
+"""
+
+SEARCH_MSG =
+"""
+TO SEARCH A MOVIE IS A SIMPLE THING.
+JUST TAP ON THE BELOW BUTTON AND ENJOY 😍
+"""
+
+
 
 @SOULTG.on_message(filters.command("start"))
 async def start_cmd(client, message):
@@ -39,22 +76,55 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=""",
-HELLO !
-MY NAME IS മഞ്ജു 💖 ,
-I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
-JUST SEARCH THE MOVIE BY ITS NAME HERE AND ENJOY 😍
-ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
-
-@SoulBotzz""",
-      reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("⚡UPDATES⚡", url="t.me/SoulBotzz"),
+        caption=START_MSG,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
-            InlineKeyboardButton("⚡CREATOR⚡", url="www.github.com/SOULTG/")
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
             ]]
             )
         )
+    
 
+@SOULTG.on_message(filters.command("help"))
+async def help_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=HELP_MSG,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
+            )
+        )
+    
+@SOULTG.on_message(filters.command("about"))
+async def about_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=ABOUT_MSG,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
+            )
+        )
+    
+@SOULTG.on_message(filters.command("search"))
+async def search_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=SEARCH_MSG,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat='')
+            ]]
+            )
+        )
 print("I AM OK DEAR")
 
 SOULTG.run()
