@@ -38,11 +38,11 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=f"""HELLO {message.from_user.mention}
-MY NAME IS MANJU 💖
-I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
-JUST GO TO HELP SECTION AND FOLLOW INSTRUCTIONS.
-ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
+        caption=f"""𝗛𝗘𝗟𝗟𝗢 {message.from_user.mention}
+𝗠𝗬 𝗡𝗔𝗠𝗘 𝗜𝗦 𝗠𝗔𝗡𝗝𝗨 💖
+𝗜 𝗖𝗔𝗡 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗠𝗔𝗟𝗔𝗬𝗔𝗟𝗔𝗠 𝗠𝗢𝗩𝗜𝗘𝗦 𝗙𝗢𝗥 𝗬𝗢𝗨 😎
+𝗝𝗨𝗦𝗧 𝗚𝗢 𝗧𝗢 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡 𝗔𝗡𝗗 𝗙𝗢𝗟𝗟𝗢𝗪 𝗜𝗡𝗦𝗧𝗥𝗨𝗖𝗧𝗜𝗢𝗡𝗦.
+𝗔𝗥𝗘 𝗬𝗢𝗨 𝗔𝗡𝗬 𝗗𝗢𝗨𝗕𝗧 𝗛𝗜𝗧 𝗛𝗘𝗥𝗘 👉🏻 /help 🛠
 @SoulBotzz""",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
@@ -58,15 +58,16 @@ ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
 async def help_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""HEY
-THIS IS MY HELP SECTION!
-HERE IS MY COMMANDS...
+        caption=""" 
+𝗛𝗘𝗬
+𝗧𝗛𝗜𝗦 𝗜𝗦 𝗠𝗬 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡!
+𝗛𝗘𝗥𝗘 𝗜𝗦 𝗠𝗬 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦...
 
-/start  : CHECK I AM ALIVE
-/help   : HOW TO USE ME
-/about  : ABOUT ME
-/search : TO SEARCH MOVIES
-/info   : DETAILS ABOUT YOU
+/start  : 𝗖𝗛𝗘𝗖𝗞 𝗜 𝗔𝗠 𝗔𝗟𝗜𝗩𝗘
+/help   : 𝗛𝗢𝗪 𝗧𝗢 𝗨𝗦𝗘 𝗠𝗘
+/about  : 𝗔𝗕𝗢𝗨𝗧 𝗠𝗘
+/search : 𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗢𝗩𝗜𝗘𝗦
+/info   : 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 𝗔𝗕𝗢𝗨𝗧 𝗬𝗢𝗨
 
 @SoulBotzz""",
         reply_markup=InlineKeyboardMarkup( [[
@@ -82,17 +83,17 @@ HERE IS MY COMMANDS...
 async def about_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""⭕NAME     : MANJU 💖
+        caption="""⭕️𝗡𝗔𝗠𝗘     : 𝗠𝗔𝗡𝗝𝗨 💖
         
-⭕CREATOR     : [SOUL BOTZZ](t.me/SoulBotzz)
+⭕️𝗖𝗥𝗘𝗔𝗧𝗢𝗥     : [𝗦𝗢𝗨𝗟 𝗕𝗢𝗧𝗭𝗭](t.me/SoulBotzz)
 
-⭕LIBRARY     : [PYROGRAM](https://docs.pyrogram.org/)
+⭕️𝗟𝗜𝗕𝗥𝗔𝗥𝗬     : [𝗣𝗬𝗥𝗢𝗚𝗥𝗔𝗠](https://docs.pyrogram.org/)
 
-⭕LANGUAGE    : [PYTHON3](www.python.org/)
+⭕️𝗟𝗔𝗡𝗚𝗨𝗔𝗚𝗘    : [𝗣𝗬𝗧𝗛𝗢𝗡𝟯](www.python.org)
 
-⭕SERVER      : [RAILWAY](https://railway.app/)
+⭕️𝗦𝗘𝗥𝗩𝗘𝗥      : [𝗥𝗔𝗜𝗟𝗪𝗔𝗬](https://railway.app/)
 
-⭕SOURCE CODE : [CLICK HERE](t.me/ManjuUpdates)
+⭕️𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : [𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘](t.me/ManjuUpdates)
 
 @SoulBotzz
 """,
@@ -110,8 +111,8 @@ async def search_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption="""
-TO SEARCH A MOVIE IS A SIMPLE THING.
-JUST TAP ON THE BELOW BUTTON AND ENJOY 😍
+𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗔 𝗠𝗢𝗩𝗜𝗘 𝗜𝗦 𝗔 𝗦𝗜𝗠𝗣𝗟𝗘 𝗧𝗛𝗜𝗡𝗚.
+𝗝𝗨𝗦𝗧 𝗧𝗔𝗣 𝗢𝗡 𝗧𝗛𝗘 𝗕𝗘𝗟𝗢𝗪 𝗕𝗨𝗧𝗧𝗢𝗡 𝗔𝗡𝗗 𝗘𝗡𝗝𝗢𝗬 😍
 
 @SoulBotzz
 """,
@@ -126,15 +127,13 @@ async def info_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption=f"""
-⭕FIRST NAME  : {message.from_user.first_name}
+⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
 
-⭕LAST NAME   : {message.from_user.last_name}
+⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
 
-⭕USERNAME    : {message.from_user.username}
+⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘    : @{message.from_user.username}
 
-⭕USER MENTION: {message.from_user.mention}
-
-⭕USER ID     : {message.from_user.mention}
+⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
 
 @SoulBotzz""",
         reply_markup=InlineKeyboardMarkup( [[
