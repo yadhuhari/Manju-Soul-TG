@@ -1,5 +1,6 @@
 from pyrogram import Client, filters 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import CallbackQuery
 import random
 from pyrogram.errors import UserNotParticipant
 
@@ -29,7 +30,7 @@ async def start_cmd(client, message):
                 return
         except UserNotParticipant :
             await message.reply_text(
-                text="𝙔𝙊𝙐 𝙃𝘼𝙑𝙀 𝙏𝙊 𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀 𝙈𝙔 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 𝙏𝙊 𝙐𝙎𝙀 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏 😁",
+                text="PLEASE SUBSCRIBE MY CHANNEL TO USE ME DEAR 😁",
                 reply_markup=InlineKeyboardMarkup( [[
                  InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{force_channel}")
                  ]]
@@ -38,12 +39,7 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=f"""𝗛𝗘𝗟𝗟𝗢 {message.from_user.mention}
-𝗠𝗬 𝗡𝗔𝗠𝗘 𝗜𝗦 𝗠𝗔𝗡𝗝𝗨 💖
-𝗜 𝗖𝗔𝗡 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗠𝗔𝗟𝗔𝗬𝗔𝗟𝗔𝗠 𝗠𝗢𝗩𝗜𝗘𝗦 𝗙𝗢𝗥 𝗬𝗢𝗨 😎
-𝗝𝗨𝗦𝗧 𝗚𝗢 𝗧𝗢 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡 𝗔𝗡𝗗 𝗙𝗢𝗟𝗟𝗢𝗪 𝗜𝗡𝗦𝗧𝗥𝗨𝗖𝗧𝗜𝗢𝗡𝗦.
-𝗛𝗔𝗩𝗘 𝗬𝗢𝗨 𝗔𝗡𝗬 𝗗𝗢𝗨𝗕𝗧 𝗛𝗜𝗧 𝗛𝗘𝗥𝗘 👉🏻 /help 🛠
-@SoulBotzz""",
+        caption=START_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -52,13 +48,32 @@ async def start_cmd(client, message):
             ]]
             )
         )
+        
+START_MESSAGE = f"""
+𝗛𝗘𝗟𝗟𝗢 {message.from_user.mention}
+𝗠𝗬 𝗡𝗔𝗠𝗘 𝗜𝗦 𝗠𝗔𝗡𝗝𝗨 💖
+𝗜 𝗖𝗔𝗡 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗠𝗔𝗟𝗔𝗬𝗔𝗟𝗔𝗠 𝗠𝗢𝗩𝗜𝗘𝗦 𝗙𝗢𝗥 𝗬𝗢𝗨 😎
+𝗝𝗨𝗦𝗧 𝗚𝗢 𝗧𝗢 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡 𝗔𝗡𝗗 𝗙𝗢𝗟𝗟𝗢𝗪 𝗜𝗡𝗦𝗧𝗥𝗨𝗖𝗧𝗜𝗢𝗡𝗦.
+𝗛𝗔𝗩𝗘 𝗬𝗢𝗨 𝗔𝗡𝗬 𝗗𝗢𝗨𝗕𝗧 𝗛𝗜𝗧 𝗛𝗘𝗥𝗘 👉🏻 /help 🛠
+@SoulBotzz"""
+        
     
 
 @SOULTG.on_message(filters.command("help"))
 async def help_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=""" 
+        caption=HELP_MESSAGE,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
+            )
+        )
+        
+HELP_MESSAGE = """ 
 𝗛𝗘𝗬 {message.from_user.mention}
 𝗧𝗛𝗜𝗦 𝗜𝗦 𝗠𝗬 𝗛𝗘𝗟𝗣 𝗦𝗘𝗖𝗧𝗜𝗢𝗡!
 𝗛𝗘𝗥𝗘 𝗜𝗦 𝗠𝗬 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦...
@@ -69,34 +84,14 @@ async def help_cmd(client, message):
 /search : 𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗢𝗩𝗜𝗘𝗦
 /info   : 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 𝗔𝗕𝗢𝗨𝗧 𝗬𝗢𝗨
 
-@SoulBotzz""",
-        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
-            ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ]]
-            )
-        )
+@SoulBotzz"""
+        
     
 @SOULTG.on_message(filters.command("about"))
 async def about_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""⭕️𝗡𝗔𝗠𝗘     : 𝗠𝗔𝗡𝗝𝗨 💖
-        
-⭕️𝗖𝗥𝗘𝗔𝗧𝗢𝗥     : [𝗦𝗢𝗨𝗟 𝗕𝗢𝗧𝗭𝗭](t.me/SoulBotzz)
-
-⭕️𝗟𝗜𝗕𝗥𝗔𝗥𝗬     : [𝗣𝗬𝗥𝗢𝗚𝗥𝗔𝗠](https://docs.pyrogram.org/)
-
-⭕️𝗟𝗔𝗡𝗚𝗨𝗔𝗚𝗘    : [𝗣𝗬𝗧𝗛𝗢𝗡𝟯](www.python.org)
-
-⭕️𝗦𝗘𝗥𝗩𝗘𝗥      : [𝗥𝗔𝗜𝗟𝗪𝗔𝗬](https://railway.app/)
-
-⭕️𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : [𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘](t.me/ManjuUpdates)
-
-@SoulBotzz
-""",
+        caption=ABOUT_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -105,28 +100,60 @@ async def about_cmd(client, message):
             ]]
             )
         )
+        
+        
+ABOUT_MESSAGE = """
+⭕️𝗡𝗔𝗠𝗘        : 𝗠𝗔𝗡𝗝𝗨 💖
+        
+⭕️𝗖𝗥𝗘𝗔𝗧𝗢𝗥     : [𝗦𝗢𝗨𝗟 𝗕𝗢𝗧𝗭𝗭](t.me/SoulBotzz)
+
+⭕️𝗟𝗜𝗕𝗥𝗔𝗥𝗬      : [𝗣𝗬𝗥𝗢𝗚𝗥𝗔𝗠](https://docs.pyrogram.org/)
+
+⭕️𝗟𝗔𝗡𝗚𝗨𝗔𝗚𝗘    : [𝗣𝗬𝗧𝗛𝗢𝗡𝟯](www.python.org)
+
+⭕️𝗦𝗘𝗥𝗩𝗘𝗥       : [𝗥𝗔𝗜𝗟𝗪𝗔𝗬](https://railway.app/)
+
+⭕️𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : [𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘](t.me/ManjuUpdates)
+
+@SoulBotzz
+"""
     
 @SOULTG.on_message(filters.command("search"))
 async def search_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""
-𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗔 𝗠𝗢𝗩𝗜𝗘 𝗜𝗦 𝗔 𝗦𝗜𝗠𝗣𝗟𝗘 𝗧𝗛𝗜𝗡𝗚.
-𝗝𝗨𝗦𝗧 𝗧𝗔𝗣 𝗢𝗡 𝗧𝗛𝗘 𝗕𝗘𝗟𝗢𝗪 𝗕𝗨𝗧𝗧𝗢𝗡 𝗔𝗡𝗗 𝗘𝗡𝗝𝗢𝗬 😍
-
-@SoulBotzz
-""",
+        caption=SEARCH_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat='')
             ]]
             )
         )
+        
+
+SEARCH_MESSAGE =        
+"""
+𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗔 𝗠𝗢𝗩𝗜𝗘 𝗜𝗦 𝗔 𝗦𝗜𝗠𝗣𝗟𝗘 𝗧𝗛𝗜𝗡𝗚.
+𝗝𝗨𝗦𝗧 𝗧𝗔𝗣 𝗢𝗡 𝗧𝗛𝗘 𝗕𝗘𝗟𝗢𝗪 𝗕𝗨𝗧𝗧𝗢𝗡 𝗔𝗡𝗗 𝗘𝗡𝗝𝗢𝗬 😍
+
+@SoulBotzz
+"""
+        
     
 @SOULTG.on_message(filters.command("info"))
 async def info_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=f"""
+        caption=INFO_MESSAGE,
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
+            )
+        )
+        
+INFO_MESSAGE =       f"""
 ⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
 
 ⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
@@ -135,14 +162,13 @@ async def info_cmd(client, message):
 
 ⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
 
-@SoulBotzz""",
-        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
-            ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ]]
-            )
+@SoulBotzz"""
+    
+@SOULTG.on_callback_query()
+acync def callback(bot, msg: CallbackQuery):
+    if msg.data=="start":
+        await msg.message.edit(
+            text=START_MESSAGE
         )
 
 print("I AM OK DEAR")
