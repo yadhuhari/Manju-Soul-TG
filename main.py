@@ -4,7 +4,7 @@ import random
 from pyrogram.errors import UserNotParticipant
 
 
-force_channel = "SoulBozz"
+force_channel = "SoulBotzz"
 
 SOULTG = Client(
     name="Manju",
