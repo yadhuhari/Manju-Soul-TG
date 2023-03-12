@@ -14,9 +14,9 @@ SOULTG = Client(
 )
 
 PICS = [
- "https://telegra.ph/file/47ee5f28d4e1fd92b2e69.jpg",
- "https://telegra.ph/file/a6fd611ade419c48e1f27.jpg",
- "https://telegra.ph/file/930b866a102409f3ae4be.jpg"
+ "https://telegra.ph/file/9befe93227525cc5de3d7.jpg",
+ "https://telegra.ph/file/a04afd5b0353d65c07050.jpg",
+ "https://telegra.ph/file/1a3f98bd9e7eb4ea8d4ba.jpg"
 ]
 
 
