@@ -19,44 +19,6 @@ PICS = [
  "https://telegra.ph/file/1a3f98bd9e7eb4ea8d4ba.jpg"
 ]
 
-START_MSG = 
-"""HELLO 
-MY NAME IS MANJU 💖
-I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
-JUST GO TO HELP SECTION AND FOLLOW INSTRUCTIONS.
-ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
-
-@SoulBotzz"""
-
-HELP_MSG =
-"""HEY
-THIS IS MY HELP SECTION!
-HERE IS MY COMMAND...
-
-/start  : CHECK I AM ALIVE
-/help   : HOW TO USE ME
-/about  : ABOUT ME
-/search : TO SEARCH MOVIES
-
-@SoulBotzz"""
-
-ABOUT_MSG =
-"""⭕NAME     : MANJU 💖
-⭕CREATOR     : [SOUL BOTZZ](t.me/SoulBotzz)
-⭕LIBRARY     : [PYROGRAM](https://docs.pyrogram.org/)
-⭕LANGUAGE    : [PYTHON3](www.python.org/)
-⭕SERVER      : [RAILWAY](https://railway.app/)
-⭕SOURCE CODE : [CLICK HERE](t.me/ManjuUpdates)
-"""
-
-SEARCH_MSG =
-"""
-TO SEARCH A MOVIE IS A SIMPLE THING.
-JUST TAP ON THE BELOW BUTTON AND ENJOY 😍
-"""
-
-
-
 @SOULTG.on_message(filters.command("start"))
 async def start_cmd(client, message):
     if force_channel:
@@ -76,7 +38,12 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=START_MSG,
+        caption=f"""HELLO {message.from_user.mention}
+MY NAME IS MANJU 💖
+I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
+JUST GO TO HELP SECTION AND FOLLOW INSTRUCTIONS.
+ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
+@SoulBotzz""",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -91,7 +58,17 @@ async def start_cmd(client, message):
 async def help_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=HELP_MSG,
+        caption="""HEY
+THIS IS MY HELP SECTION!
+HERE IS MY COMMANDS...
+
+/start  : CHECK I AM ALIVE
+/help   : HOW TO USE ME
+/about  : ABOUT ME
+/search : TO SEARCH MOVIES
+/info   : DETAILS ABOUT YOU
+
+@SoulBotzz""",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -105,7 +82,20 @@ async def help_cmd(client, message):
 async def about_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=ABOUT_MSG,
+        caption="""⭕NAME     : MANJU 💖
+        
+⭕CREATOR     : [SOUL BOTZZ](t.me/SoulBotzz)
+
+⭕LIBRARY     : [PYROGRAM](https://docs.pyrogram.org/)
+
+⭕LANGUAGE    : [PYTHON3](www.python.org/)
+
+⭕SERVER      : [RAILWAY](https://railway.app/)
+
+⭕SOURCE CODE : [CLICK HERE](t.me/ManjuUpdates)
+
+@SoulBotzz
+""",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
@@ -119,12 +109,43 @@ async def about_cmd(client, message):
 async def search_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=SEARCH_MSG,
+        caption="""
+TO SEARCH A MOVIE IS A SIMPLE THING.
+JUST TAP ON THE BELOW BUTTON AND ENJOY 😍
+
+@SoulBotzz
+""",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat='')
             ]]
             )
         )
+    
+@SOULTG.on_message(filters.command("info"))
+async def info_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=f"""
+⭕FIRST NAME  : {message.from_user.first_name}
+
+⭕LAST NAME   : {message.from_user.last_name}
+
+⭕USERNAME    : {message.from_user.username}
+
+⭕USER MENTION: {message.from_user.mention}
+
+⭕USER ID     : {message.from_user.mention}
+
+@SoulBotzz""",
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
+            )
+        )
+
 print("I AM OK DEAR")
 
 SOULTG.run()
