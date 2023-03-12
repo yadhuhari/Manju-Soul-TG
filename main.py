@@ -39,7 +39,7 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=START_MESSAGE.format{message.from_user.mention),
+        caption=START_MESSAGE.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
