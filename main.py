@@ -164,7 +164,7 @@ INFO_MESSAGE = f"""
 @SoulBotzz"""
     
 @SOULTG.on_callback_query()
-acync def callback(bot, msg: CallbackQuery):
+async def callback(bot, msg: CallbackQuery):
     if msg.data=="start":
         await msg.message.edit(
             text=START_MESSAGE
