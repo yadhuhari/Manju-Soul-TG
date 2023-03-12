@@ -45,14 +45,14 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""
+        caption=""",
 HELLO !
 MY NAME IS മഞ്ജു 💖 ,
 I CAN PROVIDE MALAYALAM MOVIES FOR YOU 😎
 JUST SEARCH THE MOVIE BY ITS NAME HERE AND ENJOY 😍
 ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
 
-@SoulBotzz"""
+@SoulBotzz""",
       reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("⚡UPDATES⚡", url="t.me/SoulBotzz"),
             ],[
@@ -60,3 +60,7 @@ ARE YOU ANY DOUBT HIT HERE 👉🏻 /help 🛠
             ]]
             )
         )
+
+print("I AM OK DEAR")
+
+SOULTG.run()
