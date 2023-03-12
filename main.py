@@ -1,23 +1,16 @@
 from pyrogram import Client, filters 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import random
-import os
 from pyrogram.errors import UserNotParticipant
 
 
 force_channel = "SoulBozz"
 
-
-API_ID = ""
-API_HASH = ""
-BOT_TOKEN = ""
-
-
 SOULTG = Client(
     name="Manju",
-    api_id=int(os.environ["API_ID"]),
-    api_hash=os.environ["API_HASH"],
-    bot_token=os.environ["BOT_TOKEN"]
+    api_id= "19383278",
+    api_hash= "6e6c8100d5564c59bfd82a7a86aadb95",
+    bot_token= "5807462026:AAFVCp5tc_G9o2aX2E6g5do0rH2DBBACevI"
 )
 
 PICS = [
