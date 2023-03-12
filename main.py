@@ -17,7 +17,10 @@ SOULTG = Client(
 PICS = [
  "https://telegra.ph/file/9befe93227525cc5de3d7.jpg",
  "https://telegra.ph/file/a04afd5b0353d65c07050.jpg",
- "https://telegra.ph/file/1a3f98bd9e7eb4ea8d4ba.jpg"
+ "https://telegra.ph/file/1a3f98bd9e7eb4ea8d4ba.jpg",
+ "https://telegra.ph/file/0922c5d8e5a378e716beb.jpg",
+ "https://telegra.ph/file/693f33f82212da4b1dfc1.jpg",
+ "https://telegra.ph/file/08627a85ed831456f6797.jpg"
 ]
 
 @SOULTG.on_message(filters.command("start"))
