@@ -147,6 +147,7 @@ async def callback(bot, msg: CallbackQuery):
         await msg.message.edit(
             photo=random.choice(PICS),
             caption=HELP_MESSAGE,
+        )
 
 print("I AM OK DEAR")
 
