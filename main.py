@@ -35,7 +35,7 @@ async def start_cmd(client, message):
             await message.reply_text(
                 text="PLEASE SUBSCRIBE MY CHANNEL TO USE ME DEAR 😁",
                 reply_markup=InlineKeyboardMarkup( [[
-                 InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{force_channel}")
+                 InlineKeyboardButton("⚡️𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{force_channel}")
                  ]]
                  )
             )
@@ -48,6 +48,9 @@ async def start_cmd(client, message):
             ],[
             InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
             InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ],[
+            InlineKeyboardButton("HELP 🛠", callback_data="help"),
+            InlineKeyboardButton("ABOUT 🤠", callback_dta="about")
             ]]
             )
         )
@@ -68,10 +71,10 @@ async def help_cmd(client, message):
         photo=random.choice(PICS),
         caption=HELP_MESSAGE.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
             ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            InlineKeyboardButton("BACK 🔙", callback_data="start"),
+            InlineKeyboardButton("HOME 🏡", callback_data="start")
             ]]
             )
         )
@@ -95,13 +98,13 @@ async def about_cmd(client, message):
         photo=random.choice(PICS),
         caption=ABOUT_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
-            ],[
-            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ]]
+                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
+                ],[
+                InlineKeyboardButton("BACK 🔙", callback_data="start"),
+                InlineKeyboardButton("HOME 🏡", callback_data="start")
+                ]]
+                )
             )
-        )
         
         
 ABOUT_MESSAGE = """
@@ -126,7 +129,10 @@ async def search_cmd(client, message):
         photo=random.choice(PICS),
         caption=SEARCH_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat='')
+            InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
+            ],[
+            InlineKeyboardButton("BACK 🔙", callback_data="start"),
+            InlineKeyboardButton("HOME 🏡", callback_data="start")
             ]]
             )
         )
@@ -144,14 +150,57 @@ async def callback(bot, msg: CallbackQuery):
     if msg.data=="start":
         await msg.message.edit(
             photo=random.choice(PICS),
-            caption=START_MESSAGE
-        )
+            caption=START_MESSAGE,
+            reply_markup=InlineKeyboardMarkup( [[
+                InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+                ],[
+                InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+                InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+                ],[
+                InlineKeyboardButton("HELP 🛠", callback_data="help"),
+                InlineKeyboardButton("ABOUT 🤠", callback_dta="about")
+                ]]
+                )
+            )
     elif msg.data=="help":
         await msg.message.edit(
             photo=random.choice(PICS),
             caption=HELP_MESSAGE,
-        )
-
+            reply_markup=InlineKeyboardMarkup( [[
+                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
+                ],[
+                InlineKeyboardButton("BACK 🔙", callback_data="start"),
+                InlineKeyboardButton("HOME 🏡", callback_data="start")
+                ]]
+                )
+            )
+        
+    elif msg.data=="about":
+        await msg.message.edit(
+            photo=random.choice(PICS),
+            caption=ABOUT_MESSAGE,
+            reply_markup=InlineKeyboardMarkup( [[
+                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
+                ],[
+                InlineKeyboardButton("BACK 🔙", callback_data="start"),
+                InlineKeyboardButton("HOME 🏡", callback_data="start")
+                ]]
+                )
+            )
+        
+  elif msg.data=="about":
+      await msg.message.edit(
+          photo=random.choice(PICS),
+          caption=SEARCH_MESSAGE,
+          reply_markup=InlineKeyboardMarkup( [[
+              InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
+              ],[
+              InlineKeyboardButton("BACK 🔙", callback_data="start"),
+              InlineKeyboardButton("HOME 🏡", callback_data="start")
+              ]]
+              )
+          )
+        
 print("I AM OK DEAR")
 
 SOULTG.run()
