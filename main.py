@@ -85,6 +85,7 @@ HELP_MESSAGE = """
 /help   : 𝗛𝗢𝗪 𝗧𝗢 𝗨𝗦𝗘 𝗠𝗘
 /about  : 𝗔𝗕𝗢𝗨𝗧 𝗠𝗘
 /search : 𝗧𝗢 𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗢𝗩𝗜𝗘𝗦
+/info   : 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 𝗔𝗕𝗢𝗨𝗧 𝗬𝗢𝗨
 
 @SoulBotzz"""
         
@@ -144,10 +145,10 @@ async def info_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption="""f
-⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
-⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
-⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘    : {message.from_user.username}
-⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
+⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.first_name}
+⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘    : {message.from_user.last_name}
+⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘     : {message.from_user.username}
+⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡 : {message.from_user.mention}
 """
 )
         
