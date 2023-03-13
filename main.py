@@ -188,18 +188,18 @@ async def callback(bot, msg: CallbackQuery):
                 )
             )
         
-  elif msg.data=="about":
-      await msg.message.edit(
-          photo=random.choice(PICS),
-          caption=SEARCH_MESSAGE,
-          reply_markup=InlineKeyboardMarkup( [[
-              InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
-              ],[
-              InlineKeyboardButton("BACK 🔙", callback_data="start"),
-              InlineKeyboardButton("HOME 🏡", callback_data="start")
-              ]]
-              )
-          )
+   elif msg.data=="about":
+       await msg.message.edit(
+           photo=random.choice(PICS),
+           caption=SEARCH_MESSAGE,
+           reply_markup=InlineKeyboardMarkup( [[
+               InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
+               ],[
+               InlineKeyboardButton("BACK 🔙", callback_data="start"),
+               InlineKeyboardButton("HOME 🏡", callback_data="start")
+               ]]
+               )
+           )
         
 print("I AM OK DEAR")
 
