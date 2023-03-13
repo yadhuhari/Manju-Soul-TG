@@ -50,7 +50,7 @@ async def start_cmd(client, message):
             InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
             ],[
             InlineKeyboardButton("HELP 🛠", callback_data="help"),
-            InlineKeyboardButton("ABOUT 🤠", callback_dta="about")
+            InlineKeyboardButton("ABOUT 🤠", callback_data="about")
             ]]
             )
         )
