@@ -45,17 +45,14 @@ async def start_cmd(client, message):
         
     m = datetime.datetime.now(),
         
-    time = m.hour
+    time = m.hour  
         
     if time < 12
-        get="GOOD MORNING DEAR"
-        
+        get="GOOD MORNING DEAR"  
     elif time < 15
-        get="GOOD AFTERNOON DEAR"
-      
+        get="GOOD AFTERNOON DEAR" 
     elif time < 20
-        get="GOOD EVENING DEAR"
-        
+        get="GOOD EVENING DEAR"   
     else:
         get="GOOD NIGHT DEAR"
         photo=random.choice(PICS),
