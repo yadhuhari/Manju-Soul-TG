@@ -43,7 +43,7 @@ async def start_cmd(client, message):
             return
     await message.reply_photo(
         
-    m = datetime.datetime.now()
+    m = datetime.datetime.now(),
         
     time = m.hour
         
