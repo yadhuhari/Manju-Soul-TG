@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import CallbackQuery
 import random
+import datetime
 from pyrogram.errors import UserNotParticipant
 
 
@@ -41,8 +42,24 @@ async def start_cmd(client, message):
             )
             return
     await message.reply_photo(
+        
+    m = datetime.datetime.now()
+        
+    time = m.hour
+        
+    if time < 12
+        get="GOOD MORNING DEAR"
+        
+    elif time < 15
+        get="GOOD AFTERNOON DEAR"
+      
+    elif time < 20
+        get="GOOD EVENING DEAR"
+        
+    else:
+        get="GOOD NIGHT DEAR"
         photo=random.choice(PICS),
-        caption=START_MESSAGE.format(message.from_user.mention),
+        caption=START_MESSAGE.format{get} (message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
