@@ -139,8 +139,8 @@ SEARCH_MESSAGE = """
 @SoulBotzz
 """
 
-@SOULTG.on_message(filters.command("search"))
-async def search_cmd(client, message):
+@SOULTG.on_message(filters.command("info"))
+async def info_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption="""f
@@ -149,7 +149,7 @@ async def search_cmd(client, message):
 ⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘    : {message.from_user.username}
 ⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
 """
-
+)
         
 print("I AM OK DEAR")
 
