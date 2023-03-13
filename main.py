@@ -48,9 +48,6 @@ async def start_cmd(client, message):
             ],[
             InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
             InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-            ],[
-            InlineKeyboardButton("HELP 🛠", callback_data="help"),
-            InlineKeyboardButton("ABOUT 🤠", callback_data="about")
             ]]
             )
         )
@@ -71,10 +68,10 @@ async def help_cmd(client, message):
         photo=random.choice(PICS),
         caption=HELP_MESSAGE.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
             ],[
-            InlineKeyboardButton("BACK 🔙", callback_data="start"),
-            InlineKeyboardButton("HOME 🏡", callback_data="start")
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
             ]]
             )
         )
@@ -98,13 +95,13 @@ async def about_cmd(client, message):
         photo=random.choice(PICS),
         caption=ABOUT_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
-                ],[
-                InlineKeyboardButton("BACK 🔙", callback_data="start"),
-                InlineKeyboardButton("HOME 🏡", callback_data="start")
-                ]]
-                )
+            InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
+            ],[
+            InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
+            InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
+            ]]
             )
+        )
         
         
 ABOUT_MESSAGE = """
@@ -129,10 +126,7 @@ async def search_cmd(client, message):
         photo=random.choice(PICS),
         caption=SEARCH_MESSAGE,
         reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
-            ],[
-            InlineKeyboardButton("BACK 🔙", callback_data="start"),
-            InlineKeyboardButton("HOME 🏡", callback_data="start")
+            InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat='')
             ]]
             )
         )
@@ -144,62 +138,18 @@ SEARCH_MESSAGE = """
 
 @SoulBotzz
 """
-    
-@SOULTG.on_callback_query()
-async def callback(bot, msg: CallbackQuery):
-    if msg.data=="start":
-        await msg.message.edit(
-            photo=random.choice(PICS),
-            caption=START_MESSAGE,
-            reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("CHANNEL 📢", url="t.me/ManjuUpdates"),
-                ],[
-                InlineKeyboardButton("CREATOR 👨‍💻", url="www.github.com/SOULTG/"),
-                InlineKeyboardButton("SUPPORT 🗣", url="t.me/SoulBotzz")
-                ],[
-                InlineKeyboardButton("HELP 🛠", callback_data="help"),
-                InlineKeyboardButton("ABOUT 🤠", callback_dta="about")
-                ]]
-                )
-            )
-    elif msg.data=="help":
-        await msg.message.edit(
-            photo=random.choice(PICS),
-            caption=HELP_MESSAGE,
-            reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
-                ],[
-                InlineKeyboardButton("BACK 🔙", callback_data="start"),
-                InlineKeyboardButton("HOME 🏡", callback_data="start")
-                ]]
-                )
-            )
-        
-    elif msg.data=="about":
-        await msg.message.edit(
-            photo=random.choice(PICS),
-            caption=ABOUT_MESSAGE,
-            reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("SEARCH MOVIE 🔍", callback_data="search"),
-                ],[
-                InlineKeyboardButton("BACK 🔙", callback_data="start"),
-                InlineKeyboardButton("HOME 🏡", callback_data="start")
-                ]]
-                )
-            )
-        
-    elif msg.data=="about":
-        await msg.message.edit(
-            photo=random.choice(PICS),
-            caption=SEARCH_MESSAGE,
-            reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("SEARCH NOW 🔍", switch_inline_query_current_chat=''),
-                ],[
-                InlineKeyboardButton("BACK 🔙", callback_data="start"),
-                InlineKeyboardButton("HOME 🏡", callback_data="start")
-                ]]
-                )
-            )
+
+@SOULTG.on_message(filters.command("search"))
+async def search_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption="""f
+⭕️𝗙𝗜𝗥𝗦𝗧 𝗡𝗔𝗠𝗘  : {message.from_user.first_name}
+⭕️𝗟𝗔𝗦𝗧 𝗡𝗔𝗠𝗘   : {message.from_user.last_name}
+⭕️𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘    : {message.from_user.username}
+⭕️𝗨𝗦𝗘𝗥 𝗠𝗘𝗡𝗧𝗜𝗢𝗡: {message.from_user.mention}
+"""
+
         
 print("I AM OK DEAR")
 
