@@ -12,7 +12,7 @@ SOULTG = Client(
     name="Manju",
     api_id= "19383278",
     api_hash= "6e6c8100d5564c59bfd82a7a86aadb95",
-    bot_token= "5807462026:AAFVCp5tc_G9o2aX2E6g5do0rH2DBBACevI"
+    bot_token= "6765813090:AAE6MgNRL6GeHGPPalhJf7fXv875gv4nSs0"
 )
 
 PICS = [
